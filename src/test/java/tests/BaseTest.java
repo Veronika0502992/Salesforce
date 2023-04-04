@@ -7,8 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
-import pages.AccountsPage;
+import pages.AccountListPage;
 import pages.LoginPage;
+import pages.NewAccountPage;
 
 
 import java.time.Duration;
@@ -17,7 +18,8 @@ import java.time.Duration;
 public class BaseTest {
     WebDriver driver;
     LoginPage loginPage;
-    AccountsPage accountsPage;
+    AccountListPage accountListPage;
+    NewAccountPage newAccountPage;
 
 
     public static final String USER = "n080910-80td@force.com";
@@ -44,7 +46,8 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         loginPage = new LoginPage(driver);
-        accountsPage = new AccountsPage(driver);
+        accountListPage = new AccountListPage(driver);
+        newAccountPage = new NewAccountPage(driver);
     }
 
     @AfterMethod(alwaysRun = true)

@@ -7,7 +7,7 @@ public class Input {
     String label;
     WebDriver driver;
     String baseLocator = "//span[contains(text(), '%s')]/ancestor::div[contains(@class, 'uiInput')]//input";
-    //String baseLocator2 = "//span[contains(text(), '%s')]/ancestor::div[contains(@class, 'slds-grid')]//div";
+
 
     public Input(WebDriver driver, String label) {
         this.driver = driver;

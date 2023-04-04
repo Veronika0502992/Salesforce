@@ -11,14 +11,21 @@ public class LoginPage extends BasePage {
     public static final By LOGIN_BUTTON = By.id("Login");
 
 
+    @Override
+    public void isPageOpened() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'tc mt24')]//a[text() = 'Try for Free']")));
+
+    }
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
 
     @Step("Открытие страницы логина")
-    public void open() {
+    public LoginPage open() {
         driver.get(LOGIN_URL);
+        return this;
     }
 
     @Step("Ввод логина и пароля")

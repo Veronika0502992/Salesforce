@@ -13,7 +13,7 @@ public class TextArea {
         this.driver = driver;
         this.label = label;
     }
-    public void writeMore(String text) {
+    public void write(String text) {
         driver.findElement(By.xpath(String.format(baseLocator, label))).sendKeys(text);
     }
 }

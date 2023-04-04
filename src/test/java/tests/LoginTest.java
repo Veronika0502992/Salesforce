@@ -7,8 +7,10 @@ public class LoginTest extends BaseTest {
     @Test(description = "Check if user can log in", retryAnalyzer = Retry.class)
     public void login() {
         loginPage.open();
+        loginPage.isPageOpened();
         loginPage.login(USER, PASSWORD);
         driver.findElement(By.cssSelector("[title=User]")).isDisplayed();
+
 
 
     }
