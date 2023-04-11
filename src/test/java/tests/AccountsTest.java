@@ -18,12 +18,31 @@ public class AccountsTest extends BaseTest {
                 .isPageOpened();
         accountListPage.clickNew();
         newAccountPage.isPageOpened();
-        Account account = new Account("test", "123456", "852741", "test", "test", "test",
-                "test", "test", "test", "test", "test", "3333",
-                "test", "8888", "test", "test", "test", "test");
-        newAccountPage.fillIn(account)
+        //Account account = new Account("test", "123456", "852741", "test", "test", "test",
+                //"test", "test", "test", "test", "test", "3333",
+                //"test", "8888", "test", "test", "test", "test");
+        Account account2 = Account.builder()
+                .accountName("Test")
+                .parentAccount("Test")
+                .fax("123456")
+                .phone("8962")
+                .annualRevenue("Test")
+                .website("Test")
+                .employee("Test")
+                .description("Test")
+                .billingCity("Test")
+                .billingState("Test")
+                .shippingCity("Test")
+                .shippingState("Test")
+                .billingCountry("Test")
+                .billingZip("789")
+                .shippingCountry("Test")
+                .shippingZip("9999")
+                .billingStreet("Test")
+                .shippingStreet("Test")
+                .build();
+        newAccountPage.fillIn(account2)
                 .save();
-
 
     }
 }

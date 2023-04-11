@@ -2,11 +2,13 @@ package pages;
 
 import dto.Account;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import wrappers.Input;
 import wrappers.TextArea;
+@Log4j2
 
 public class NewAccountPage extends BasePage {
 
@@ -33,7 +35,7 @@ public class NewAccountPage extends BasePage {
     @Step("Заполнение полей в новом аккаунте")
     public NewAccountPage fillIn(Account account)
      {
-
+log.info("Creating account {}",account);
         new Input(driver, "Account Name").write(account.getAccountName());
         new Input(driver, "Phone").write(account.getPhone());
         new Input(driver, "Fax").write(account.getFax());

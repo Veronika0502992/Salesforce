@@ -11,7 +11,5 @@ public class LoginTest extends BaseTest {
         loginPage.login(USER, PASSWORD);
         driver.findElement(By.cssSelector("[title=User]")).isDisplayed();
 
-
-
     }
 }

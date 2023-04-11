@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +14,7 @@ import pages.NewAccountPage;
 
 
 import java.time.Duration;
-
+@Log4j2
 @Listeners(TestListener.class)
 public class BaseTest {
     WebDriver driver;
@@ -30,6 +31,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(@Optional("chrome") String browser, ITestContext testContext) {
+        log.info("Starting tests in browser {}", browser);
         if (browser.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
